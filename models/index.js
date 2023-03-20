@@ -20,12 +20,16 @@ const db = {}
 db.Sequlize = Sequlize
 db.sequelize = sequelize
 
-db.quizzes = require('./quiz')(sequelize, Sequlize)
-db.fsynonims = require('./synonim/factorsynonim')(sequelize, Sequlize)
-db.jsynonims = require('./synonim/jenissynonim')(sequelize, Sequlize)
-db.santonims = require('./antonim/sifatantonim')(sequelize, Sequlize)
-db.jantonims = require('./antonim/jenisantonim')(sequelize, Sequlize)
-db.kamussynos = require('./synonim/kamus')(sequelize, Sequlize)
-db.kamusantos = require('./antonim/kamus')(sequelize, Sequlize)
+db.quizzes = require('./quiz')(sequelize, Sequlize);
+//sinonim
+db.kamussynos = require('./synonim/kamus')(sequelize, Sequlize);
+db.fsynonims = require('./synonim/factorsynonim')(sequelize, Sequlize);
+db.jsynonims = require('./synonim/jenissynonim')(sequelize, Sequlize);
+db.hsynonims = require('./synonim/home')(sequelize, Sequlize)
+//antonim
+db.santonims = require('./antonim/sifatantonim')(sequelize, Sequlize);
+db.jantonims = require('./antonim/jenisantonim')(sequelize, Sequlize);
+db.kamusantos = require('./antonim/kamus')(sequelize, Sequlize);
+db.hantonims = require('./antonim/home')(sequelize, Sequlize);
 
 module.exports = db
